@@ -1,4 +1,6 @@
-export class CpfController {
+import { CpfService } from "../service/cpf.service";
+
+class CpfController {
   constructor(cpfService) {
     this.cpfService = cpfService;
   }
@@ -6,8 +8,6 @@ export class CpfController {
   generateCpf() {
     return this.cpfService.generateCpf();
   }
-
-  validateCpf(cpf) {
-    return this.cpfService.validateCpf(cpf);
-  }
 }
+
+export const cpfController = new CpfController(new CpfService());
